@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RxApp</string>
+    <string name="search">Search</string>
+    <string name="enter_request">Enter your request here</string>
+</resources>
