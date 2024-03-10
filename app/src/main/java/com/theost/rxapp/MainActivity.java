@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                                             .filter(apiObject -> apiObject
                                             .getValue().contains(text))
                                             .collect(Collectors.toList())
-                            )
+                            ).take(100).sorted()
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(apiObjects -> {
