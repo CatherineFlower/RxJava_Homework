@@ -35,18 +35,21 @@ public class MainActivity extends AppCompatActivity {
                     Api.getData().map(
                                     apiObjects -> apiObjects
                                             .stream()
-                                            .filter(apiObject -> apiObject
-                                            .getValue().contains(text))
+                                            .filter(apiObject ->
+                                                            apiObject
+                                                                    .getValue().contains(text)
+                                            )
                                             .collect(Collectors.toList())
-                            ).take(100).sorted()
+                            ).take(3).sorted()
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(apiObjects -> {
                                 binding.textView.setText(apiObjects.toString());
+                                binding.progressBar.setVisibility(View.GONE);
+                                binding.button.setVisibility(View.VISIBLE);
                             }, Throwable::printStackTrace)
             );
-            binding.progressBar.setVisibility(View.GONE);
-            binding.button.setVisibility(View.VISIBLE);
+
         });
     }
 

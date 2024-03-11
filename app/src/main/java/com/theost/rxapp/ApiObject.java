@@ -1,5 +1,7 @@
 package com.theost.rxapp;
 
+import androidx.annotation.NonNull;
+
 import java.util.Random;
 
 public class ApiObject {
@@ -77,6 +79,12 @@ public class ApiObject {
 
     public String getRandomField9() {
         return randomField9;
+    }
+
+    @NonNull
+    @Override
+    public String toString(){
+        return getValue();
     }
 
 }
