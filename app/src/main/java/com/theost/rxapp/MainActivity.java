@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
                                                             apiObject
                                                                     .getValue().contains(text)
                                             )
+                                            .limit(10)
                                             .collect(Collectors.toList())
-                            ).take(3).sorted()
+                            )
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(apiObjects -> {
