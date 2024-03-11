@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                                                             apiObject
                                                                     .getValue().contains(text)
                                             )
-                                            .limit(10)
+                                            .limit(100)
                                             .collect(Collectors.toList())
                             )
                             .subscribeOn(Schedulers.io())
